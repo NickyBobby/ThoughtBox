@@ -34,6 +34,7 @@ gem 'pg'
 gem 'capybara'
 gem 'launchy'
 gem 'validate_url'
+gem 'responders'
 
 group :development, :test do
   gem 'byebug'
