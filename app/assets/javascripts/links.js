@@ -56,5 +56,6 @@ function linkInfo(link) {
   return "<div id='" + link.id + "' class='" + color + "'>" +
          "<h4><a href='" + link.url +"'>" + link.title + "</a></h4>" +
          button +
+         "<button><a href='/links/" + link.id + "/edit' class='edit-link'>Edit</a></button>" +
          "</div>";
 }
