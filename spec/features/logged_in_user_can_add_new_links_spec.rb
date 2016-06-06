@@ -13,7 +13,6 @@ RSpec.feature "logged in user can add new links" do
       fill_in "Url", with: "http://www.google.com"
       click_on "Add Link"
 
-      save_and_open_page
       expect(page).to have_content "Google"
 
     end
