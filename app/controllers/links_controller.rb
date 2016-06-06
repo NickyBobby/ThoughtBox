@@ -11,9 +11,20 @@ class LinksController < ApplicationController
     end
   end
 
+  def edit
+    @link = Link.find(params[:id])
+  end
+
   def update
-    Link.find(params[:id]).update(link_params)
-    render :index
+    @link = Link.find(params[:id])
+    @link.assign_attributes(link_params)
+    if @link.valid?
+      @link.save
+      redirect_to root_path
+    else
+      flash[:danger] = "Invalid URL"
+      render :edit
+    end
   end
 
   private
