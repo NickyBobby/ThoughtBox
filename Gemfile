@@ -33,12 +33,15 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pg'
 gem 'capybara'
 gem 'launchy'
+gem 'validate_url'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'pry'
   gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do
