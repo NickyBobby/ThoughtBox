@@ -17,6 +17,25 @@ RSpec.feature "visitor can sign up" do
       click_button "Sign Up"
 
       expect(page).to have_content "Welcome, Nick"
+      expect(page).to have_content "Sign Out"
+      expect(page).not_to have_content "Log In or Sign Up"
+
+      click_link "Sign Out"
+
+      expect(page).not_to have_content "Sign Out"
+      expect(page).to have_content "Log In or Sign Up"
     end
+
+    # scenario "logged out user sees homepage with log in button" do
+    #   visit "/"
+    #
+    #   expect(page).to have_content "Sign Out"
+    #   expect(page).not_to have_content "Log In or Sign Up"
+    #
+    #   click_link "Sign Out"
+    #
+    #   expect(page).not_to have_content "Sign Out"
+    #   expect(page).to have_content "Log In or Sign Up"
+    # end
   end
 end
