@@ -2,16 +2,15 @@
   <h4>Welcome, <%= current_user.first_name %></h4>
   <button><a href="<%= logout_path %>" class="" data-method="delete">Sign Out</a></button>
   <div class="">
-    <%= form_for Link.new, url: links_path, method: "post" do |f| %>
-      <h4><%= f.label :title %></h4>
-      <h4><%= f.text_field :title %></h4>
-      <h4><%= f.label :url %></h4>
-      <h4><%= f.text_field :url %></h4>
-      <%= f.submit "Add Link", class: "btn btn-default btn-font-size" %>
-    <% end %>
+    <%= text_field_tag :title, nil, placeholder: "Title" %><br>
+    <%= text_area_tag :url, nil, placeholder: "URL Address" %><br>
+    <button id="add-link" class="btn btn-success">Add Link</button>
   </div>
 <% else %>
   <button><a href="<%= login_path %>" class="">Log In or Sign Up</a></button>
 <% end %>
 
-<div id="<%= current_user.id %>" class="all-links">
+<h1>Thought Box</h1>
+<% if current_user %>
+  <div id="<%= current_user.id %>" class="all-links">
+<% end %>
