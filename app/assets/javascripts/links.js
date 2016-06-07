@@ -3,10 +3,14 @@ $(document).ready(function() {
   getAllLinks(userId);
   var $allLinks = $('.all-links');
 
-  $allLinks.delegate('.update-link', 'click', function() {
-    var linkId = $(this).parent().parent().attr('id');
+  $('.all-links').delegate('.update-link', 'click', function() {
+    var linkId = $(this).parent().attr('id');
     var linkParams = $(this).attr('id').split('-')[0];
     updateReadStatus(linkId, linkParams);
+  });
+
+  $('#add-link').click(function() {
+    createLink();
   });
 });
 
@@ -16,7 +20,7 @@ function updateReadStatus(id, params) {
     url:  '/api/v1/links/' + id,
     data: {link: { read: params } },
     success: function() {
-      $('#' + id).empty();
+      $('.all-links').empty();
       var userId = $('.all-links').attr('id');
       getAllLinks(userId);
     }
