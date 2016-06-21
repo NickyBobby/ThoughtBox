@@ -3,7 +3,7 @@ class Api::V1::LinksController < Api::V1::BaseController
 
   def index
     @user = User.find(params[:id])
-    respond_with @user.links
+    respond_with @user.links.alphabetically
   end
 
   def create
