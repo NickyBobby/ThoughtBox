@@ -57,8 +57,8 @@ function linkInfo(link) {
   color = "blueBack";
   }
 
-  return "<div id='" + link.id + "' class='" + color + "'>" +
-         "<h4><a href='" + link.url +"'>" + link.title + "</a></h4>" +
+  return "<div id='" + link.id + "' class='link " + color + "'>" +
+         "<h3><a id='link' href='" + link.url +"'>" + link.title + "</a></h3>" +
          button +
          "<button><a href='/links/" + link.id + "/edit' class='edit-link'>Edit</a></button>" +
          "</div>";

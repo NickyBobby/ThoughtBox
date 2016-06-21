@@ -6,6 +6,15 @@
     <%= text_area_tag :url, nil, placeholder: "URL Address" %><br>
     <button id="add-link" class="btn btn-success">Add Link</button>
   </div>
+  <div class="filter">
+    <%= text_field_tag :search, nil, class: 'search' %>
+    <button id='clear-search' class='btn btn-primary'>Clear Search</button><br>
+    <form class="">
+      <input type='radio' id='all' name='readStatus' value='1' checked>All<br>
+      <input type='radio' id='read' name='readStatus' value='1'>Read<br>
+      <input type='radio' id='unread' name='readStatus' value='1'>Unread<br>
+    </form>
+  </div>
 <% else %>
   <button><a href="<%= login_path %>" class="">Log In or Sign Up</a></button>
 <% end %>
